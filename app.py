@@ -16,7 +16,7 @@ def get_tasks():
 
 
 with open('config/config.yml') as file_handler:
-    port = yaml.load(file_handler.read()).get('PORT', 7000)
+    port = yaml.load(file_handler.read(), Loader=yaml.FullLoader).get('PORT', 7000)
 
 
 app.run(debug=True, port=port, host='0.0.0.0')
